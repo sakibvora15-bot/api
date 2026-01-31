@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ========== Global Reset ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  background-color: #fdfdfd;
+  color: #222;
+}
+
+/* ========== Navbar ========== */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: antiquewhite;
+  padding: 15px 30px;
+  flex-wrap: wrap;
+}
+
+nav .logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #222;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+nav li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav li a:hover {
+  color: #0066cc;
+}
+
+/* ========== Main Container ========== */
+.container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.container h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+/* ========== Form ========== */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+label {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+select,
+input[type="number"] {
+  font-size: 1rem;
+  padding: 8px;
+  width: 60%;
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.btn {
+  background-color: darkcyan;
+  color: white;
+  font-size: 1.1rem;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #008b8b;
+}
+
+/* ========== Table ========== */
+.output {
+  margin-top: 40px;
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1rem;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+thead {
+  background-color: #f2f2f2;
+}
+
+tfoot {
+  background-color: #eaeaea;
+  font-weight: 600;
+}
+
+/* ========== Footer ========== */
+footer {
+  background-color: antiquewhite;
+  padding: 15px 0;
+  text-align: center;
+  font-weight: 500;
+  margin-top: 50px;
+}
+
+/* ========== Responsive Design ========== */
+
+/* Tablets */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .container h1 {
+    font-size: 1.6rem;
+  }
+
+  select,
+  input[type="number"] {
+    width: 80%;
+  }
+
+  .btn {
+    width: 50%;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+  }
+
+  .container h1 {
+    font-size: 1.4rem;
+  }
+
+  label {
+    font-size: 1rem;
+  }
+
+  select,
+  input[type="number"] {
+    width: 90%;
+  }
+
+  .btn {
+    width: 70%;
+    font-size: 1rem;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+}
