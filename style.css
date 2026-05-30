@@ -10,8 +10,11 @@
 body {
   font-family: "Poppins", sans-serif;
   line-height: 1.6;
-  background-color: #fdfdfd;
+  background-color: #f4f6f9;
   color: #222;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ========== Navbar ========== */
@@ -19,179 +22,254 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: antiquewhite;
-  padding: 15px 30px;
+  background-color: #fff;
+  padding: 15px 40px;
   flex-wrap: wrap;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 nav .logo {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 700;
-  color: #222;
+  color: #008b8b;
+  letter-spacing: 2px;
 }
 
 nav ul {
   display: flex;
   list-style: none;
-  gap: 25px;
+  gap: 30px;
 }
 
 nav li a {
   text-decoration: none;
-  color: #333;
+  color: #444;
   font-weight: 500;
+  font-size: 0.95rem;
   transition: color 0.3s ease;
+  position: relative;
+}
+
+nav li a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #008b8b;
+  transition: width 0.3s ease;
 }
 
 nav li a:hover {
-  color: #0066cc;
+  color: #008b8b;
+}
+
+nav li a:hover::after {
+  width: 100%;
 }
 
 /* ========== Main Container ========== */
 .container {
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 0 20px;
-  text-align: center;
+  max-width: 650px;
+  margin: 50px auto;
+  padding: 40px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+  flex: 1;
 }
 
 .container h1 {
-  margin-bottom: 20px;
-  font-size: 2rem;
+  margin-bottom: 8px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #008b8b;
+  letter-spacing: 1px;
 }
 
-/* ========== Form ========== */
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-  margin-top: 20px;
+.container>p,
+.container>label:first-of-type {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+  display: block;
 }
 
+/* ========== Form Elements ========== */
 label {
-  font-size: 1.2rem;
-  margin-top: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #555;
+  display: block;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 select,
 input[type="number"] {
   font-size: 1rem;
-  padding: 8px;
-  width: 60%;
-  max-width: 300px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  font-family: "Poppins", sans-serif;
+  padding: 12px 16px;
+  width: 100%;
+  border: 1.5px solid #ddd;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  color: #222;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 18px;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23555' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+select:focus,
+input[type="number"]:focus {
+  outline: none;
+  border-color: #008b8b;
+  box-shadow: 0 0 0 3px rgba(0, 139, 139, 0.12);
+  background-color: #fff;
 }
 
 .btn {
-  background-color: darkcyan;
+  background-color: #008b8b;
   color: white;
-  font-size: 1.1rem;
-  padding: 10px 25px;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  padding: 13px 25px;
+  width: 100%;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
 }
 
 .btn:hover {
-  background-color: #008b8b;
+  background-color: #006f6f;
+}
+
+.btn:active {
+  transform: scale(0.98);
 }
 
 /* ========== Table ========== */
 .output {
-  margin-top: 40px;
+  margin-top: 32px;
   overflow-x: auto;
+  border-radius: 10px;
+  border: 1.5px solid #e0e0e0;
 }
 
 table {
   border-collapse: collapse;
   width: 100%;
-  margin: 0 auto;
   text-align: center;
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
-th, td {
-  border: 1px solid #ccc;
-  padding: 10px;
-}
-
-thead {
-  background-color: #f2f2f2;
-}
-
-tfoot {
-  background-color: #eaeaea;
+caption {
+  font-size: 0.85rem;
   font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 10px;
+  background-color: #f4f6f9;
+}
+
+th {
+  background-color: #008b8b;
+  color: #fff;
+  padding: 12px 16px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #f0f0f0;
+  color: #333;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background-color: #f0fafa;
 }
 
 /* ========== Footer ========== */
 footer {
-  background-color: antiquewhite;
-  padding: 15px 0;
+  background-color: #fff;
+  padding: 18px 0;
   text-align: center;
+  font-size: 0.88rem;
+  color: #888;
   font-weight: 500;
-  margin-top: 50px;
+  border-top: 1px solid #eee;
+  margin-top: auto;
 }
 
 /* ========== Responsive Design ========== */
-
-/* Tablets */
 @media (max-width: 768px) {
+  nav {
+    padding: 12px 20px;
+  }
+
   nav ul {
+    gap: 16px;
+  }
+
+  .container {
+    margin: 24px 16px;
+    padding: 28px 20px;
+  }
+
+  .container h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
     flex-direction: column;
-    align-items: center;
     gap: 10px;
   }
 
   .container h1 {
-    font-size: 1.6rem;
-  }
-
-  select,
-  input[type="number"] {
-    width: 80%;
-  }
-
-  .btn {
-    width: 50%;
-  }
-}
-
-/* Mobile Phones */
-@media (max-width: 480px) {
-  nav {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 20px;
-  }
-
-  .logo {
-    margin-bottom: 10px;
     font-size: 1.3rem;
   }
 
-  .container h1 {
-    font-size: 1.4rem;
-  }
-
   label {
-    font-size: 1rem;
-  }
-
-  select,
-  input[type="number"] {
-    width: 90%;
+    font-size: 0.85rem;
   }
 
   .btn {
-    width: 70%;
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   table {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+  }
+
+  th,
+  td {
+    padding: 10px 10px;
   }
 }
