@@ -4,20 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Currency Converter</title>
-    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <nav>
       <div class="logo">CURRENCY</div>
       <ul>
-        <li><a href="/">home</a></li>
-        <li><a href="about">about</a></li>
-        <li><a href="contact">contact</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
 
     <div class="container">
-      <h1>CHOOSE A CURRENCY</h1>
+      <h1>CURRENCY CONVERTER</h1>
+      <p>Get live exchange rates instantly</p>
 
       <label for="country">Choose a currency:</label>
       <select name="country" id="country">
@@ -26,31 +27,38 @@
         <option value="EUR">🇪🇺 Euro (EUR)</option>
         <option value="GBP">🇬🇧 UK (GBP)</option>
         <option value="AED">🇦🇪 UAE (AED)</option>
+        <option value="JPY">🇯🇵 Japan (JPY)</option>
+        <option value="CAD">🇨🇦 Canada (CAD)</option>
+        <option value="AUD">🇦🇺 Australia (AUD)</option>
       </select>
 
-      <br /><br />
+      <label for="quantity">Enter amount:</label>
+      <input type="number" name="quantity" id="quantity" min="1" placeholder="e.g. 100" />
 
-      <label for="quantity">Choose a quantity:</label>
-      <input type="number" name="quantity" id="quantity" min="1" placeholder="Enter amount" />
-
-      <button class="btn">Submit</button>
+      <button class="btn">Convert →</button>
 
       <div class="output">
-        <table border="1">
+        <table>
           <caption>Conversion Result</caption>
           <thead>
             <tr>
               <th>From</th>
               <th>Amount</th>
-              <th>To INR</th>
+              <th>To INR (₹)</th>
             </tr>
           </thead>
-          <tbody></tbody>
+          <tbody>
+            <tr>
+              <td colspan="3" style="color:#aaa; padding:20px;">
+                Select a currency and enter amount to convert
+              </td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>
 
-    <footer>Copyright &copy; All Reserved by Sakib</footer>
+    <footer>Copyright &copy; All Rights Reserved by Sakib</footer>
     <script src="my.js"></script>
   </body>
 </html>
